@@ -1,0 +1,16 @@
+C# ID3 Tag Library: https://sourceforge.net/projects/csid3lib/
+
+How To ID3 Guide: https://stackoverflow.com/questions/1750464/how-to-read-and-write-id3-tags-to-an-mp3-in-c
+
+How To ID3 Video Guide: https://www.youtube.com/watch?v=C305CxPCBKY
+
+Another ID3 Library: https://csharp-id3-library.soft112.com/
+
+********************************************************************
+TAGLIB
+
+Distribution: https://www.nuget.org/packages/taglib
+
+Github: https://github.com/mono/taglib-sharp
+
+********************************************************************
