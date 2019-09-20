@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
-    </Grid>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="261" Margin="52,85,0,0" VerticalAlignment="Top" Width="679">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="File Name" IsReadOnly="True" Binding="{Binding Path=FileName}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="File Size" IsReadOnly="True"  Binding="{Binding Path=FileSize}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID3 Size" IsReadOnly="True" Binding="{Binding Path=ID3Size}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="Path" IsReadOnly="True"  Binding="{Binding Path=Path}" Width="420"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Menu x:Name="File" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="80"/>
+        </Grid>
 </Window>
