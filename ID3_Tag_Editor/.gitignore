@@ -1,0 +1,14 @@
+core.ignore.recursive= \
+{*.aps} \
+{*.bak} \
+{*.ncb} \
+{*.opensdf} \
+{*.sdf} \
+{*.suo} \
+{*.user} \
+{.vs} \
+{bin} \
+{obj}
+
+core.ignore= \
+{bin}
