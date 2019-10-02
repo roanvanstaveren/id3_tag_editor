@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ID3_Tag_Editor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="823.258">
     <Grid>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="261" Margin="52,85,0,0" VerticalAlignment="Top" Width="679">
             <DataGrid.Columns>
@@ -17,5 +17,15 @@
             </DataGrid.Columns>
         </DataGrid>
         <Menu x:Name="File" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="80"/>
-        </Grid>
+        <Button Content="🡅" HorizontalAlignment="Left" Margin="740,85,0,0" VerticalAlignment="Top" Width="47" RenderTransformOrigin="0.546,1.833" Height="31"/>
+        <Button Content="🡇" HorizontalAlignment="Left" Margin="740,121,0,0" VerticalAlignment="Top" Width="47" Height="31"/>
+        <Menu HorizontalAlignment="Left" Height="99" Margin="10,0,0,0" VerticalAlignment="Top" Width="94">
+            <MenuItem Header="_Add..." />
+            <MenuItem Header="_Load List..." />
+            <MenuItem Header="_Save List..." />
+            <MenuItem Header="_Save All..." />
+            <Separator />
+            <MenuItem Header="_Exit" />
+        </Menu>
+    </Grid>
 </Window>
