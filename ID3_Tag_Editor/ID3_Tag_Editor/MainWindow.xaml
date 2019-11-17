@@ -11,11 +11,31 @@
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
                     <MenuItem Header="_Add..." />
-                    <MenuItem Header="_Load List..." />
+                    <MenuItem Header="_Load List..." Click="File_Add_Click" />
                     <MenuItem Header="_Save List..." />
                     <MenuItem Header="_Save All..." />
                     <Separator />
                     <MenuItem Header="_Exit" />
+                </MenuItem>
+                <MenuItem Header="_View">
+                    <MenuItem Header="_File List" IsCheckable="True" IsChecked="True"/>
+                    <MenuItem Header="_Error List" IsCheckable="True" IsChecked="False"/>
+                </MenuItem>
+                <MenuItem Header="_All">
+                    <MenuItem Header="_Renaming..."/>
+                    <MenuItem Header="_Set Track Number"/>
+                </MenuItem>
+                <MenuItem Header="_Window">
+                    <MenuItem Header="_Cascade Windows"/>
+                    <MenuItem Header="_Tile Windows Horizontally"/>
+                    <MenuItem Header="_Tile Windows Vertically"/>
+                    <Separator/>
+                    <MenuItem Header="_1 Files" IsCheckable="True" IsChecked="True"/>
+                </MenuItem>
+                <MenuItem Header="_Help">
+                    <MenuItem Header="_Help"/>
+                    <Separator/>
+                    <MenuItem Header="_About"/>
                 </MenuItem>
             </Menu>
         </DockPanel>
