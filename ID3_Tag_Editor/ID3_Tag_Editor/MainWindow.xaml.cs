@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Collections.ObjectModel;
 
 namespace ID3_Tag_Editor
 {
@@ -23,6 +24,7 @@ namespace ID3_Tag_Editor
     /// </summary>
     public partial class MainWindow : Window
     {
+        ObservableCollection<ID3v2> collection = new ObservableCollection<ID3v2>();
         public MainWindow()
         {
             InitializeComponent();
@@ -30,78 +32,59 @@ namespace ID3_Tag_Editor
 
         private void File_Add_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            string filePath = String.Empty;
-            if (openFileDialog.ShowDialog() == true)
+            OpenFileDialog List = new OpenFileDialog();
+            List.Multiselect = false;
+            List.Filter = "M3U Files (*.m3u)|*.m3u";
+            List.Title = "List File";
+            List.ValidateNames = true;
+            if (List.ShowDialog() == true)
             {
-                filePath = openFileDialog.FileName;
+                LoadM3u(List.FileName);
             }
-
-            LoadM3u(filePath);
         }
 
+        public void LoadM3u(string FilePath)
+        {
+            if (Path.GetExtension(FilePath).ToLower() != ".m3u")
+                return;
+
+            //ClearList();
+            string[] L = M3U.Load(FilePath);
+            foreach (string st in L)
+                AddNewFile(st);
+        }
+
+        public void AddNewFile(string FilePath)
+        {
+            ID3v2 ID3File;
+
+            try
+            {
+                ID3File = new ID3v2(FilePath, true);
+                collection.Add(ID3File);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(FilePath + "\nCan't load file. " + ex.Message, "Loading File");
+                return;
+            }
+
+            //dataGrid.ItemsSource = collection;
+            //_Tags.Remove(FilePath); // remove previous file if was in list
+            //_Tags.Add(FilePath, ID3File);
+
+            //_ErrorDialog.AddErrors(ID3File);
+            //ID3File.ID3v2Info.Errors.Clear();
+        }
         /// <summary>
         /// Open OpenFileDialog to choose file for opening
         /// </summary>
         public void AddNewFile()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (openFileDialog.ShowDialog() == true)
                 foreach (string File in openFileDialog.FileNames)
                     AddNewFile(File);
-        }
-
-        /// <summary>
-        /// Add Specific file to list
-        /// </summary>
-        /// <param name="FilePath">FileAddress to add</param>
-        public void AddNewFile(string FilePath)
-        {
-            ID3Info ID3File;
-
-            try
-            {
-                ID3File = new ID3Info(FilePath, true);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(FilePath + "\nCan't load file. " + ex.Message, "Loading File",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (_Tags.ContainsKey(FilePath))
-            {
-                if (MessageBox.Show("This file is in list. would you like to reload it ?",
-                    "reloading", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                    MessageBoxDefaultButton.Button2) == DialogResult.No)
-                    return; // exit function
-            }
-
-            _FileListDialog.AddFile(ID3File);
-            _Tags.Remove(FilePath); // remove previous file if was in list
-            _Tags.Add(FilePath, ID3File);
-
-            _ErrorDialog.AddErrors(ID3File);
-            //ID3File.ID3v2Info.Errors.Clear();
-        }
-
-        public void AddFiles()
-        {
-            string Ext = Path.GetExtension(File);
-            if (Ext.ToLower() == ".mp3")
-                Program.MainForm.AddNewFile(File);
-            if (Ext.ToLower() == ".m3u")
-                Program.MainForm.LoadM3u(File);
-        }
-
-        public ofdOpenMp3
-        public void LoadM3u(string FilePath)
-        {
-            if (Path.GetExtension(FilePath).ToLower() != ".m3u")
-                return;
-
-            string[] L = M3U.Load(FilePath);
         }
     }
 }
