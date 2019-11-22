@@ -39,7 +39,8 @@ namespace ID3_Tag_Editor
             List.ValidateNames = true;
             if (List.ShowDialog() == true)
             {
-                LoadM3u(List.FileName);
+                var list = List.FileName;
+                LoadM3u(list);
             }
         }
 
@@ -50,8 +51,14 @@ namespace ID3_Tag_Editor
 
             //ClearList();
             string[] L = M3U.Load(FilePath);
+            var fpath = FilePath.Replace("\\m3u.m3u", "\\");
             foreach (string st in L)
-                AddNewFile(st);
+            {
+                if (st == String.Empty)
+                    break;
+                string path = fpath + st;
+                AddNewFile(path);
+            }
         }
 
         public void AddNewFile(string FilePath)
