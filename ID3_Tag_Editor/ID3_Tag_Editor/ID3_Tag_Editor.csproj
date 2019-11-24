@@ -102,5 +102,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ID3Class\ID3.csproj">
+      <Project>{5D66099A-A8C5-47AB-B230-C9B60DFC1B40}</Project>
+      <Name>ID3</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
