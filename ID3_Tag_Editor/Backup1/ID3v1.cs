@@ -11,7 +11,6 @@ namespace ID3.ID3v1Frame
     public class ID3v1
     {
         private string _FilePath;
-        private string _FileSize;
         private string _Title;
         private string _Artist;
         private string _Album;
@@ -168,7 +167,6 @@ namespace ID3.ID3v1Frame
 			else
 			{
 				_FilePath = "";
-                _FileSize = "";
 				_Title = "";
 				_Artist = "";
 				_Album = "";

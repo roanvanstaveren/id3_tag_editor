@@ -4,8 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using ID3;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,7 +24,7 @@ namespace ID3_Tag_Editor
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<ID3v2> collection = new ObservableCollection<ID3v2>();
+        ObservableCollection<ID3Info> collection = new ObservableCollection<ID3Info>();
         public MainWindow()
         {
             InitializeComponent();
@@ -63,12 +63,13 @@ namespace ID3_Tag_Editor
 
         public void AddNewFile(string FilePath)
         {
-            ID3v2 ID3File;
+            ID3Info ID3File;
 
             try
             {
-                ID3File = new ID3v2(FilePath, true);
+                ID3File = new ID3Info(FilePath, true);
                 collection.Add(ID3File);
+                dataGrid.ItemsSource = collection; 
             }
             catch (Exception ex)
             {

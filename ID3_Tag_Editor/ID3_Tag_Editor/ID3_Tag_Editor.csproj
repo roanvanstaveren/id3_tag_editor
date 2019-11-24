@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ID3Class\ID3.csproj">
-      <Project>{5D66099A-A8C5-47AB-B230-C9B60DFC1B40}</Project>
+      <Project>{5d66099a-a8c5-47ab-b230-c9b60dfc1b40}</Project>
       <Name>ID3</Name>
     </ProjectReference>
   </ItemGroup>
