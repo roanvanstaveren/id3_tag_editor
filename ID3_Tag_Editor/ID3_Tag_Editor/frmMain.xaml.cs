@@ -20,7 +20,7 @@ using System.Collections.ObjectModel;
 namespace ID3_Tag_Editor
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for frmMain.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -97,7 +97,9 @@ namespace ID3_Tag_Editor
 
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            int i = 0;
+            frmGeneral general = new frmGeneral();
+            general.Show();
+            this.Close();
         }
     }
 }

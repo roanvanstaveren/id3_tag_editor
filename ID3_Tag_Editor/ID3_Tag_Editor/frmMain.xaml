@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ID3_Tag_Editor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="823.258">
+        Title="Main" Height="450" Width="823.258">
     <Grid>
         <DockPanel>
             <Menu DockPanel.Dock="Top">
