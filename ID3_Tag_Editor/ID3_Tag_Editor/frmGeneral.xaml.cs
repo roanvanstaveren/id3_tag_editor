@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ID3;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,10 @@ namespace ID3_Tag_Editor
     /// <summary>
     /// Interaction logic for frmGeneral.xaml
     /// </summary>
-    public partial class frmGeneral : Window
+    public partial class frmGeneral : frmMain
     {
-        public frmGeneral()
+        public frmGeneral(ID3Info[] Data)
+            : base(Data)
         {
             InitializeComponent();
         }
