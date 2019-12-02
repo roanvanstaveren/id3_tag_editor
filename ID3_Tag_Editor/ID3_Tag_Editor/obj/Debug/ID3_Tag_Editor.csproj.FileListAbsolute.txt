@@ -54,3 +54,24 @@ C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor
 C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor.Properties.Resources.resources
 C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor.csproj.GenerateResource.cache
 C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor.csproj.CopyComplete
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\bin\Debug\ID3_Tag_Editor.exe.config
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\bin\Debug\ID3_Tag_Editor.exe
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\bin\Debug\ID3_Tag_Editor.pdb
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\bin\Debug\ID3.dll
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\bin\Debug\policy.2.0.taglib-sharp.dll
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\bin\Debug\taglib-sharp.dll
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\bin\Debug\ID3.pdb
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\bin\Debug\policy.2.0.taglib-sharp.config
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor.csprojAssemblyReference.cache
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\MainWindow.g.cs
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\App.g.cs
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor_MarkupCompile.cache
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor_MarkupCompile.lref
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\MainWindow.baml
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor.g.resources
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor.Properties.Resources.resources
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor.csproj.GenerateResource.cache
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor.csproj.CoreCompileInputs.cache
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor.csproj.CopyComplete
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor.exe
+C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\ID3_Tag_Editor.pdb
