@@ -30,7 +30,7 @@
                 <Label Content="Genre:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="4"/>
                 <Label Content="Album:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="3"/>
                 <Label Content="Artist:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="2"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="tbTrack" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                 <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="3"/>
                 <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="2"/>
                 <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
@@ -75,7 +75,7 @@
                 <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="120"/>
             </Grid>
         </GroupBox>
-        <Button Content="_OK" HorizontalAlignment="Left" Margin="25,432,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="_OK" HorizontalAlignment="Left" Margin="25,432,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Button Content="_Next &gt;&gt;" HorizontalAlignment="Left" Margin="265,432,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="&lt;&lt; _Previous" HorizontalAlignment="Left" Margin="185,432,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="_Cancel" HorizontalAlignment="Left" Margin="105,432,0,0" VerticalAlignment="Top" Width="75"/>

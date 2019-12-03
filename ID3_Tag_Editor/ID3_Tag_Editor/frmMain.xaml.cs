@@ -26,20 +26,10 @@ namespace ID3_Tag_Editor
     public partial class frmMain : Window
     {
         private ID3Info _Data;
-        private ID3Info[] _Datas;
         ObservableCollection<ID3Info> collection = new ObservableCollection<ID3Info>();
-        public frmMain(params ID3Info[] Data)
+        public frmMain()
         {
             InitializeComponent();
-
-            if (Data.Length == 1)
-            {
-                _Data = Data[0];
-            }
-            else
-            {
-                _Datas = Data;
-            }
         }
 
         private void File_Add_Click(object sender, RoutedEventArgs e)
@@ -109,8 +99,8 @@ namespace ID3_Tag_Editor
 
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            frmGeneral general = new frmGeneral(Data);
-            general.Show();
+            frmGeneral g = new frmGeneral(_Data);
+            g.Show();
             this.Close();
         }
     }

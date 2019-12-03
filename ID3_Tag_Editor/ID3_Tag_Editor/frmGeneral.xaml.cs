@@ -18,12 +18,19 @@ namespace ID3_Tag_Editor
     /// <summary>
     /// Interaction logic for frmGeneral.xaml
     /// </summary>
-    public partial class frmGeneral : frmMain
+    public partial class frmGeneral : Window
     {
-        public frmGeneral(ID3Info[] Data)
-            : base(Data)
+        private ID3Info _id3;
+        public frmGeneral(ID3Info Data)
         {
             InitializeComponent();
+            _id3 = Data;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // id3 is null
+            tbTrack.Text = _id3.FileName;
         }
     }
 }
