@@ -32,6 +32,7 @@ namespace ID3_Tag_Editor
             InitializeComponent();
         }
 
+        // Load List 1
         private void File_Add_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog List = new OpenFileDialog();
@@ -46,6 +47,7 @@ namespace ID3_Tag_Editor
             }
         }
 
+        // Load List 2
         public void LoadM3u(string FilePath)
         {
             if (Path.GetExtension(FilePath).ToLower() != ".m3u")
@@ -63,40 +65,29 @@ namespace ID3_Tag_Editor
             }
         }
 
+        // Load List 3
         public void AddNewFile(string FilePath)
         {
             ID3Info ID3File;
 
             try
             {
+                var fileInfo = new FileInfo(FilePath);
                 ID3File = new ID3Info(FilePath, true);
-                collection.Add(ID3File);
-                dataGrid.ItemsSource = collection; 
+                ID3File.FileSize = fileInfo.Length / 1000;
+                collection.Add(ID3File); // Filepath is set correctly, Columns are being added at the end
+                _Data = ID3File;
+                dataGrid.ItemsSource = collection;
+                // FileInfo(path).Length
             }
             catch (Exception ex)
             {
                 MessageBox.Show(FilePath + "\nCan't load file. " + ex.Message, "Loading File");
                 return;
             }
-
-            //dataGrid.ItemsSource = collection;
-            //_Tags.Remove(FilePath); // remove previous file if was in list
-            //_Tags.Add(FilePath, ID3File);
-
-            //_ErrorDialog.AddErrors(ID3File);
-            //ID3File.ID3v2Info.Errors.Clear();
-        }
-        /// <summary>
-        /// Open OpenFileDialog to choose file for opening
-        /// </summary>
-        public void AddNewFile()
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-                foreach (string File in openFileDialog.FileNames)
-                    AddNewFile(File);
         }
 
+        // Row Click 1
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             frmGeneral g = new frmGeneral(_Data);

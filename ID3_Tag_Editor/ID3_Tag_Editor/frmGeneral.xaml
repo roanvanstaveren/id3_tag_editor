@@ -75,7 +75,7 @@
                 <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="120"/>
             </Grid>
         </GroupBox>
-        <Button Content="_OK" HorizontalAlignment="Left" Margin="25,432,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="_OK" HorizontalAlignment="Left" Margin="25,432,0,0" VerticalAlignment="Top" Width="75" />
         <Button Content="_Next &gt;&gt;" HorizontalAlignment="Left" Margin="265,432,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="&lt;&lt; _Previous" HorizontalAlignment="Left" Margin="185,432,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="_Cancel" HorizontalAlignment="Left" Margin="105,432,0,0" VerticalAlignment="Top" Width="75"/>

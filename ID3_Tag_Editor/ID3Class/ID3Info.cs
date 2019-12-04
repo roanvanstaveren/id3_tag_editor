@@ -101,14 +101,10 @@ namespace ID3
             { return _ID3v1.FileName; }
         }
 
-        /// <summary>
-        /// Get FileSize of current ID3Info file
-        /// </summary>
-        //public string FileSize
-        //{
-        //    get
-        //    { return _ID3v1.FileSize; }
-        //}
+        // <summary>
+        // Get FileSize of current ID3Info file
+        // </summary>
+        public long FileSize { get; set; }
 
         public override bool Equals(object obj)
         {

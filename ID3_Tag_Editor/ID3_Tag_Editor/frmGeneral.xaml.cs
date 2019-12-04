@@ -25,11 +25,7 @@ namespace ID3_Tag_Editor
         {
             InitializeComponent();
             _id3 = Data;
-        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            // id3 is null
             tbTrack.Text = _id3.FileName;
         }
     }

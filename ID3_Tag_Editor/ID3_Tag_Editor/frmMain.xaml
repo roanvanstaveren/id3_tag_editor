@@ -40,13 +40,12 @@
             </Menu>
         </DockPanel>
 
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="261" Margin="32,82,0,0" VerticalAlignment="Top" Width="679" MouseDoubleClick="Row_DoubleClick">
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="261" Margin="32,82,0,0" VerticalAlignment="Top" Width="679" MouseDoubleClick="Row_DoubleClick">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="File Name" IsReadOnly="True" Binding="{Binding Path=FileName}" Width="100"></DataGridTextColumn>
-                <DataGridTextColumn Header="File Size" IsReadOnly="True"  Binding="{Binding Path=FileSize}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="File Name" IsReadOnly="True" Binding="{Binding Path=FileName}" Width="140"></DataGridTextColumn>
+                <DataGridTextColumn Header="File Size (kB)" IsReadOnly="True"  Binding="{Binding Path=FileSize}" Width="60"></DataGridTextColumn>
                 <DataGridTextColumn Header="ID3 Size" IsReadOnly="True" Binding="{Binding Path=ID3Size}" Width="80"></DataGridTextColumn>
-                <DataGridTextColumn Header="Path" IsReadOnly="True"  Binding="{Binding Path=Path}" Width="420"></DataGridTextColumn>
-
+                <DataGridTextColumn Header="Path" IsReadOnly="True"  Binding="{Binding Path=FilePath}" Width="500"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="🡅" HorizontalAlignment="Left" Margin="727,82,0,0" VerticalAlignment="Top" Width="47" RenderTransformOrigin="0.546,1.833" Height="31"/>
