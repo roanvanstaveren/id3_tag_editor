@@ -90,7 +90,7 @@ namespace ID3_Tag_Editor
         // Row Click 1
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            frmGeneral g = new frmGeneral(_Data);
+            frmGeneral g = new frmGeneral(_Data.FilePath);
             g.Show();
             this.Close();
         }

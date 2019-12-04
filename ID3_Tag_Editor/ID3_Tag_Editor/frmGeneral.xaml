@@ -30,14 +30,14 @@
                 <Label Content="Genre:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="4"/>
                 <Label Content="Album:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="3"/>
                 <Label Content="Artist:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="2"/>
-                <TextBox x:Name="tbTrack" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="3"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="2"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="120"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="6"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="5"/>
-                <Button Content="Copy from Version 2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="7" VerticalAlignment="Top" Width="135" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="tbTrack" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243"/>
+                <TextBox x:Name="tbAlbum" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="10,9.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="3"/>
+                <TextBox x:Name="tbArtist" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="2"/>
+                <TextBox x:Name="tbTitle" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="1"/>
+                <TextBox x:Name="tbComment" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="6"/>
+                <TextBox x:Name="tbYear" Grid.Column="1" Height="22" Margin="10,10.5,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="5"/>
+                <Button x:Name="btCopyFrom2" Content="Copy from Version 2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="7" VerticalAlignment="Top" Width="135" Grid.ColumnSpan="2" Click="btCopyFrom2_Click"/>
+                <TextBox x:Name="tbGenre" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="4"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="ID3v2" HorizontalAlignment="Left" Height="409" Margin="371,0,0,0" VerticalAlignment="Top" Width="334">
@@ -56,29 +56,27 @@
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
-                <Label Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                <Label Content="Track:" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                <Label Content="Lanugage:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.481,4.566" Grid.Row="6"/>
-                <Label Content="Genre:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="5"/>
-                <Label Content="Album:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="4"/>
-                <Label Content="Artist:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="3"/>
-                <Label Content="Title:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="2"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="3"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="2"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Grid.Row="1"/>
-                <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="120"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="5"/>
-                <Button Content="Copy from Version 1" HorizontalAlignment="Left" Margin="11,10,0,0" Grid.Row="7" VerticalAlignment="Top" Width="135" Grid.ColumnSpan="2"/>
-                <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="58"/>
-                <Label Content="Set:" Grid.Column="1" HorizontalAlignment="Left" Margin="92,10,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.037,0.163"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="143,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Grid.Row="1"/>
-                <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Track:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <Label Content="Language:" HorizontalAlignment="Left" Margin="10,6.5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.481,4.566" Grid.Row="5"/>
+                <Label Content="Genre:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Grid.Row="4"/>
+                <Label Content="Album:" HorizontalAlignment="Left" Margin="10,6.5,0,0" VerticalAlignment="Top" Grid.Row="3"/>
+                <Label Content="Artist:" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Grid.Row="2"/>
+                <Label Content="Title:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                <TextBox x:Name="tbArtist2" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="9.5,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="2"/>
+                <TextBox x:Name="tbTitle2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.5,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="1"/>
+                <TextBox x:Name="tbTrack2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10.5,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58"/>
+                <TextBox x:Name="tbGenre2" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="9.5,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="4"/>
+                <Button x:Name="btCopyFrom1" Content="Copy from Version 1" HorizontalAlignment="Left" Margin="11,10,0,0" Grid.Row="7" VerticalAlignment="Top" Width="135" Grid.ColumnSpan="2" Click="btCopyFrom1_Click"/>
+                <Label Content="Set:" Grid.Column="1" HorizontalAlignment="Left" Margin="92.5,7,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.037,0.163"/>
+                <TextBox x:Name="tbSet2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="142.5,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58"/>
+                <TextBox x:Name="tbLanguage2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.5,6.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="5"/>
+                <TextBox x:Name="tbAlbum2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.5,6.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="3"/>
             </Grid>
         </GroupBox>
-        <Button Content="_OK" HorizontalAlignment="Left" Margin="25,432,0,0" VerticalAlignment="Top" Width="75" />
-        <Button Content="_Next &gt;&gt;" HorizontalAlignment="Left" Margin="265,432,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="&lt;&lt; _Previous" HorizontalAlignment="Left" Margin="185,432,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="_Cancel" HorizontalAlignment="Left" Margin="105,432,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btOk" Content="_OK" HorizontalAlignment="Left" Margin="25,432,0,0" VerticalAlignment="Top" Width="75" />
+        <Button x:Name="btNext" Content="_Next &gt;&gt;" HorizontalAlignment="Left" Margin="265,432,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btPrevious" Content="&lt;&lt; _Previous" HorizontalAlignment="Left" Margin="185,432,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btCancel" Content="_Cancel" HorizontalAlignment="Left" Margin="105,432,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
