@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Collections;
 
 namespace ID3_Tag_Editor
 {
@@ -33,7 +34,7 @@ namespace ID3_Tag_Editor
         }
 
         // Load List 1
-        private void File_Add_Click(object sender, RoutedEventArgs e)
+        private void Load_List_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog List = new OpenFileDialog();
             List.Multiselect = false;
@@ -94,5 +95,67 @@ namespace ID3_Tag_Editor
             g.Show();
             this.Close();
         }
+
+        // File Add 1 
+        private void File_Add_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog List = new OpenFileDialog();
+            List.Multiselect = false;
+            List.Filter = "MP3 Files (*.mp3)|*.mp3";
+            List.ValidateNames = true;
+            if (List.ShowDialog() == true)
+            {
+
+                LoadMP3(List.FileName);
+            }
+
+
+        }
+
+        // File Add 2
+        public void LoadMP3(string path)
+        {
+            var file = TagLib.File.Create(path); // Get file from filepath
+
+            if (Path.GetExtension(file.Name).ToLower() != ".mp3")
+                return;
+
+            AddNewFile(path);
+        }
+
+        private void Save_List_Click(object sender, RoutedEventArgs e)
+        {
+            List<TagLib.File> files = new List<TagLib.File>();
+
+            foreach (var item in collection)
+            {
+                files.Add(TagLib.File.Create(item.FilePath));
+            }
+
+            SaveList(files);
+        }
+
+        public void SaveList(List<TagLib.File> files)
+        {
+            OpenFileDialog FileDialog = new OpenFileDialog();
+            FileDialog.Multiselect = false;
+            FileDialog.Filter = "M3U files(*.m3u)|*.m3u";
+            FileDialog.Title = "Save files list";
+            if (FileDialog.ShowDialog() == true)
+            {
+                System.IO.FileInfo SF = new System.IO.FileInfo(FileDialog.FileName);
+                ArrayList A = new ArrayList();
+                foreach (string st in _Tags.Keys)
+                {
+                    System.IO.FileInfo F = new System.IO.FileInfo(st);
+                    if (F.DirectoryName == SF.DirectoryName)
+                        A.Add(F.Name);
+                    else
+                        A.Add(F.FullName);
+                }
+                M3U.Save(SFD.FileName, (string[])A.ToArray(typeof(string)));
+            }
+        }
     }
 }
+

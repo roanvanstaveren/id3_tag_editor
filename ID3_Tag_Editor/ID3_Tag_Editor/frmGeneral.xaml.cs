@@ -57,7 +57,11 @@ namespace ID3_Tag_Editor
 
         private void btCopyFrom1_Click(object sender, RoutedEventArgs e)
         {
-
+            tbTrack2.Text = tbTrack.Text;
+            tbTitle2.Text = tbTitle.Text;
+            tbArtist2.Text = tbArtist.Text;
+            tbAlbum2.Text = tbAlbum.Text;
+            tbGenre2.Text = tbGenre.Text;
         }
     }
 }
