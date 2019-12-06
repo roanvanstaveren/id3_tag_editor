@@ -1,0 +1,72 @@
+﻿<Window x:Class="ID3_Tag_Editor.TextInformation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ID3_Tag_Editor"
+        mc:Ignorable="d"
+        Title="TextInformation" Height="524.679" Width="800">
+    <Grid Height="464" VerticalAlignment="Top">
+        <GroupBox x:Name="groupBox" Header="GroupBox" HorizontalAlignment="Left" Height="444" VerticalAlignment="Top" Width="775" Margin="10,10,0,0">
+            <Grid HorizontalAlignment="Left" Height="407" Margin="10,10,-2,0" VerticalAlignment="Top" Width="755">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Label x:Name="label" Content="Title/Songname:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label_Copy" Content="BPM:" HorizontalAlignment="Left" Margin="10.5,10,0,0" VerticalAlignment="Top" Grid.Column="2" Grid.Row="4"/>
+                <Label x:Name="label_Copy1" Content="Set Subtitle:" HorizontalAlignment="Left" Margin="10.5,10,0,0" VerticalAlignment="Top" Grid.Column="2" Grid.Row="3"/>
+                <Label x:Name="label_Copy2" Content="Part of set:" HorizontalAlignment="Left" Margin="10.5,10,0,1" Grid.Column="2" Grid.Row="2"/>
+                <Label x:Name="label_Copy3" Content="Playlist Delay:" HorizontalAlignment="Left" Margin="10.5,10,0,0" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1"/>
+                <Label x:Name="label_Copy4" Content="Track Number: " HorizontalAlignment="Left" Margin="10.5,10,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                <Label x:Name="label_Copy5" Content="Initial Key: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="10"/>
+                <Label x:Name="label_Copy6" Content="Content Description:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="9"/>
+                <Label x:Name="label_Copy7" Content="Genre:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="8"/>
+                <Label x:Name="label_Copy8" Content="Mood:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="7"/>
+                <Label x:Name="label_Copy9" Content="Language:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="6"/>
+                <Label x:Name="label_Copy10" Content="Interpret:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="5"/>
+                <Label x:Name="label_Copy11" Content="Album Sort Order:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="4"/>
+                <Label x:Name="label_Copy12" Content="Album:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="3"/>
+                <Label x:Name="label_Copy13" Content="Subtitle/Description:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="2"/>
+                <Label x:Name="label_Copy14" Content="Title Sort Order:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                <TextBox x:Name="tbTitle" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Grid.Column="1"/>
+                <TextBox x:Name="tbBPM" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Grid.Column="3" Grid.Row="4"/>
+                <TextBox x:Name="tbSetSubtitle" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Grid.Column="3" Grid.Row="3"/>
+                <TextBox x:Name="tbPartOfSet" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Grid.Column="3" Grid.Row="2"/>
+                <TextBox x:Name="tbPlaylistDelay" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Grid.Column="3" Grid.Row="1"/>
+                <TextBox x:Name="tbTrackNumber" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Grid.Column="3"/>
+                <TextBox x:Name="tbContentDescription" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Grid.Column="1" Grid.Row="9"/>
+                <TextBox x:Name="tbInterpret" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Grid.Column="1" Grid.Row="5"/>
+                <TextBox x:Name="tbAlbumSortOrder" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Grid.Column="1" Grid.Row="4"/>
+                <TextBox x:Name="tbAlbum" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Grid.Column="1" Grid.Row="3"/>
+                <TextBox x:Name="tbSubtitle" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Grid.Column="1" Grid.Row="2"/>
+                <TextBox x:Name="tbTitleSortOrder" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Grid.Column="1" Grid.Row="1"/>
+                <ComboBox x:Name="cbLanguage" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="255"/>
+                <ComboBox x:Name="cbGenre" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="255"/>
+                <ComboBox x:Name="cbMood" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="7" VerticalAlignment="Top" Width="255"/>
+                <ComboBox x:Name="cbInitialKey" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="10" VerticalAlignment="Top" Width="255"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="24" Margin="10,459,0,-19" VerticalAlignment="Top" Width="101"/>
+        <Button x:Name="btOK" Content="_OK" HorizontalAlignment="Left" Height="24" Margin="10,459,0,-19" VerticalAlignment="Top" Width="101"/>
+        <Button x:Name="btNext" Content="_Next &gt;&gt;" HorizontalAlignment="Left" Height="24" Margin="328,459,0,-19" VerticalAlignment="Top" Width="101"/>
+        <Button x:Name="btPrevious" Content="&lt;&lt; Previous" HorizontalAlignment="Left" Height="24" Margin="222,459,0,-19" VerticalAlignment="Top" Width="101"/>
+        <Button x:Name="btSave" Content="Save" HorizontalAlignment="Left" Height="24" Margin="116,459,0,-19" VerticalAlignment="Top" Width="101"/>
+
+    </Grid>
+</Window>

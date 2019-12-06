@@ -73,12 +73,12 @@
                 <TextBox x:Name="tbLanguage2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.5,9.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="5"/>
             </Grid>
         </GroupBox>
-        <Button x:Name="btOk" Content="_OK" HorizontalAlignment="Left" Margin="25,432,0,0" VerticalAlignment="Top" Width="75" />
-        <Button x:Name="btNext" Content="_Next &gt;&gt;" HorizontalAlignment="Left" Margin="345,432,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btPrevious" Content="&lt;&lt; _Previous" HorizontalAlignment="Left" Margin="265,432,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btCancel" Content="_Cancel" HorizontalAlignment="Left" Margin="105,432,0,0" VerticalAlignment="Top" Width="75" Click="btCancel_Click"/>
-        <Button x:Name="btSave" Content="_Save" HorizontalAlignment="Left" Margin="185,432,0,0" VerticalAlignment="Top" Width="75" Click="btSave_Click" />
+        <Button x:Name="btOk" Content="_OK" HorizontalAlignment="Left" Margin="25,432,0,0" VerticalAlignment="Top" Width="75" Click="btOk_Click" />
+        <Button x:Name="btNext" Content="_Next &gt;&gt;" HorizontalAlignment="Left" Margin="265,432,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btPrevious" Content="&lt;&lt; _Previous" HorizontalAlignment="Left" Margin="185,432,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btSave" Content="_Save" HorizontalAlignment="Left" Margin="105,432,0,0" VerticalAlignment="Top" Width="75" Click="btSave_Click" />
         <Label x:Name="lbPath" Content="" HorizontalAlignment="Left" Margin="425,429,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btTextInformation" Content="_Text Information" HorizontalAlignment="Left" Margin="345,432,0,0" VerticalAlignment="Top" Width="104" Click="btTextInformation_Click"/>
 
     </Grid>
 </Window>

@@ -90,19 +90,26 @@ namespace ID3_Tag_Editor
             file.Tag.Performers[0] = tbArtist2.Text;
             file.Tag.Album = tbAlbum2.Text;
 
-            // Adding changes because Genre & performer are readonly
+            // Setting Performers to null because file.Tag.FirstPerformer is read-only
             file.Tag.Performers = null; // clearing out performers
-            file.Tag.Performers = new[] { tbArtist2.Text }; // works now
+            file.Tag.Performers = new[] { tbArtist2.Text }; 
 
+            // Same for Genres
             file.Tag.Genres = null; // clearing out genres
-            file.Tag.Genres = new[] { cbGenre2.SelectedItem.ToString()}; // works now
+            file.Tag.Genres = new[] { cbGenre2.SelectedItem.ToString()};
 
             file.Save();
         }
 
-        private void btCancel_Click(object sender, RoutedEventArgs e)
+        private void btOk_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btTextInformation_Click(object sender, RoutedEventArgs e)
+        {
+            TextInformation tf = new TextInformation(file.Name);
+            tf.Show();
         }
     }
 }

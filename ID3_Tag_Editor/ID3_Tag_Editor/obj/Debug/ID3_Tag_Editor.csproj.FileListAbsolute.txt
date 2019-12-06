@@ -100,3 +100,5 @@ C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor
 C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\frmMain.g.cs
 C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\frmGeneral.baml
 C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\frmMain.baml
+C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\TextInformation.g.cs
+C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_Editor\obj\Debug\TextInformation.baml
