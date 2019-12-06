@@ -20,21 +20,20 @@ namespace ID3_Tag_Editor
     /// </summary>
     public partial class frmGeneral : Window
     {
+        TagLib.File file;
         public frmGeneral(string filepath)
         {
             InitializeComponent();
 
-            var file = TagLib.File.Create(filepath); // Get file from filepath
-            
-            //// Save Changes:
-            //file.Save();
+            file = TagLib.File.Create(filepath); // Get file from filepath
+            lbPath.Content = file.Name;
 
             // ID3v1
             tbTrack.Text = file.Tag.Track.ToString();
             tbTitle.Text = file.Tag.Title;
             tbArtist.Text = file.Tag.FirstPerformer;
             tbAlbum.Text = file.Tag.Album;
-            tbGenre.Text = file.Tag.FirstGenre;
+            cbGenre.SelectedItem = file.Tag.FirstGenre;
             tbYear.Text = file.Tag.Year.ToString();
             tbComment.Text = file.Tag.Comment;
 
@@ -43,7 +42,28 @@ namespace ID3_Tag_Editor
             tbTitle2.Text = file.Tag.Title;
             tbArtist2.Text = file.Tag.FirstPerformer;
             tbAlbum2.Text = file.Tag.Album;
-            tbGenre.Text = file.Tag.FirstGenre;
+            cbGenre2.SelectedItem = file.Tag.FirstGenre;
+
+            // Combobox items
+            cbGenre.Items.Add("Blues");
+            cbGenre.Items.Add("Classic Rock");
+            cbGenre.Items.Add("Country");
+            cbGenre.Items.Add("Dance");
+            cbGenre.Items.Add("Disco");
+            cbGenre.Items.Add("Funk");
+            cbGenre.Items.Add("Hip-Hop");
+            cbGenre.Items.Add("Jazz");
+            cbGenre.Items.Add("Metal");
+
+            cbGenre2.Items.Add("Blues");
+            cbGenre2.Items.Add("Classic Rock");
+            cbGenre2.Items.Add("Country");
+            cbGenre2.Items.Add("Dance");
+            cbGenre2.Items.Add("Disco");
+            cbGenre2.Items.Add("Funk");
+            cbGenre2.Items.Add("Hip-Hop");
+            cbGenre2.Items.Add("Jazz");
+            cbGenre2.Items.Add("Metal");
         }
 
         private void btCopyFrom2_Click(object sender, RoutedEventArgs e)
@@ -52,7 +72,7 @@ namespace ID3_Tag_Editor
             tbTitle.Text = tbTitle2.Text;
             tbArtist.Text = tbArtist2.Text;
             tbAlbum.Text = tbAlbum2.Text;
-            tbGenre.Text = tbGenre2.Text;
+            cbGenre.Text = cbGenre2.Text;
         }
 
         private void btCopyFrom1_Click(object sender, RoutedEventArgs e)
@@ -61,7 +81,28 @@ namespace ID3_Tag_Editor
             tbTitle2.Text = tbTitle.Text;
             tbArtist2.Text = tbArtist.Text;
             tbAlbum2.Text = tbAlbum.Text;
-            tbGenre2.Text = tbGenre.Text;
+            cbGenre2.Text = cbGenre.Text;
+        }
+
+        private void btSave_Click(object sender, RoutedEventArgs e)
+        {
+            file.Tag.Title = tbTitle2.Text;
+            file.Tag.Performers[0] = tbArtist2.Text;
+            file.Tag.Album = tbAlbum2.Text;
+
+            // Adding changes because Genre & performer are readonly
+            file.Tag.Performers = null; // clearing out performers
+            file.Tag.Performers = new[] { tbArtist2.Text }; // works now
+
+            file.Tag.Genres = null; // clearing out genres
+            file.Tag.Genres = new[] { cbGenre2.SelectedItem.ToString()}; // works now
+
+            file.Save();
+        }
+
+        private void btCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

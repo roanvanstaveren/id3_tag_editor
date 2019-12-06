@@ -37,7 +37,7 @@
                 <TextBox x:Name="tbComment" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="6"/>
                 <TextBox x:Name="tbYear" Grid.Column="1" Height="22" Margin="10,10.5,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="5"/>
                 <Button x:Name="btCopyFrom2" Content="Copy from Version 2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="7" VerticalAlignment="Top" Width="135" Grid.ColumnSpan="2" Click="btCopyFrom2_Click"/>
-                <TextBox x:Name="tbGenre" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="4"/>
+                <ComboBox x:Name="cbGenre" HorizontalAlignment="Left" Margin="10,9,0,0" Grid.Row="4" VerticalAlignment="Top" Width="242" Height="30" Grid.Column="1"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="ID3v2" HorizontalAlignment="Left" Height="409" Margin="371,0,0,0" VerticalAlignment="Top" Width="334">
@@ -65,18 +65,20 @@
                 <TextBox x:Name="tbArtist2" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="9.5,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="2"/>
                 <TextBox x:Name="tbTitle2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.5,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="1"/>
                 <TextBox x:Name="tbTrack2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10.5,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58"/>
-                <TextBox x:Name="tbGenre2" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="9.5,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="4"/>
                 <Button x:Name="btCopyFrom1" Content="Copy from Version 1" HorizontalAlignment="Left" Margin="11,10,0,0" Grid.Row="7" VerticalAlignment="Top" Width="135" Grid.ColumnSpan="2" Click="btCopyFrom1_Click"/>
                 <Label Content="Set:" Grid.Column="1" HorizontalAlignment="Left" Margin="92.5,7,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.037,0.163"/>
                 <TextBox x:Name="tbSet2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="142.5,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58"/>
-                <TextBox x:Name="tbLanguage2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.5,6.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="5"/>
                 <TextBox x:Name="tbAlbum2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.5,6.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="3"/>
+                <ComboBox x:Name="cbGenre2" Grid.Column="1" HorizontalAlignment="Left" Margin="10.5,7,0,0" Grid.Row="4" VerticalAlignment="Top" Width="215" Height="32"/>
+                <TextBox x:Name="tbLanguage2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.5,9.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="5"/>
             </Grid>
         </GroupBox>
         <Button x:Name="btOk" Content="_OK" HorizontalAlignment="Left" Margin="25,432,0,0" VerticalAlignment="Top" Width="75" />
-        <Button x:Name="btNext" Content="_Next &gt;&gt;" HorizontalAlignment="Left" Margin="265,432,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btPrevious" Content="&lt;&lt; _Previous" HorizontalAlignment="Left" Margin="185,432,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btCancel" Content="_Cancel" HorizontalAlignment="Left" Margin="105,432,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btNext" Content="_Next &gt;&gt;" HorizontalAlignment="Left" Margin="345,432,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btPrevious" Content="&lt;&lt; _Previous" HorizontalAlignment="Left" Margin="265,432,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btCancel" Content="_Cancel" HorizontalAlignment="Left" Margin="105,432,0,0" VerticalAlignment="Top" Width="75" Click="btCancel_Click"/>
+        <Button x:Name="btSave" Content="_Save" HorizontalAlignment="Left" Margin="185,432,0,0" VerticalAlignment="Top" Width="75" Click="btSave_Click" />
+        <Label x:Name="lbPath" Content="" HorizontalAlignment="Left" Margin="425,429,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

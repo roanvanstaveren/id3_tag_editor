@@ -56,12 +56,10 @@ namespace ID3_Tag_Editor
 
             //ClearList();
             string[] L = M3U.Load(FilePath);
-            var fpath = FilePath.Replace("\\m3u.m3u", "\\");
-            foreach (string st in L)
+            foreach (string path in L)
             {
-                if (st == String.Empty)
+                if (path == String.Empty)
                     break;
-                string path = fpath + st;
                 AddNewFile(path);
             }
         }
@@ -93,7 +91,6 @@ namespace ID3_Tag_Editor
         {
             frmGeneral g = new frmGeneral(_Data.FilePath);
             g.Show();
-            this.Close();
         }
 
         // File Add 1 
@@ -125,36 +122,31 @@ namespace ID3_Tag_Editor
 
         private void Save_List_Click(object sender, RoutedEventArgs e)
         {
-            List<TagLib.File> files = new List<TagLib.File>();
-
-            foreach (var item in collection)
-            {
-                files.Add(TagLib.File.Create(item.FilePath));
-            }
-
-            SaveList(files);
+            SaveList();
         }
 
-        public void SaveList(List<TagLib.File> files)
+        // Save list as .m3u 
+        public void SaveList()
         {
-            OpenFileDialog FileDialog = new OpenFileDialog();
-            FileDialog.Multiselect = false;
+            SaveFileDialog FileDialog = new SaveFileDialog();
             FileDialog.Filter = "M3U files(*.m3u)|*.m3u";
             FileDialog.Title = "Save files list";
             if (FileDialog.ShowDialog() == true)
             {
-                System.IO.FileInfo SF = new System.IO.FileInfo(FileDialog.FileName);
+                FileInfo SF = new FileInfo(FileDialog.FileName);
                 ArrayList A = new ArrayList();
-                foreach (string st in _Tags.Keys)
+                foreach (var st in collection)
                 {
-                    System.IO.FileInfo F = new System.IO.FileInfo(st);
-                    if (F.DirectoryName == SF.DirectoryName)
-                        A.Add(F.Name);
-                    else
-                        A.Add(F.FullName);
+                    FileInfo F = new FileInfo(st.FilePath);
+                    A.Add(F.FullName);
                 }
-                M3U.Save(SFD.FileName, (string[])A.ToArray(typeof(string)));
+                M3U.Save(FileDialog.FileName, (string[])A.ToArray(typeof(string)));
             }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

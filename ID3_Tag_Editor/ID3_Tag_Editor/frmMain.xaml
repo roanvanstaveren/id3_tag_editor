@@ -13,9 +13,8 @@
                     <MenuItem Header="_Add..." Click="File_Add_Click" />
                     <MenuItem Header="_Load List..." Click="Load_List_Click" />
                     <MenuItem Header="_Save List..." Click="Save_List_Click"/>
-                    <MenuItem Header="_Save All..." />
                     <Separator />
-                    <MenuItem Header="_Exit" />
+                    <MenuItem Header="_Exit" Click="Exit_Click" />
                 </MenuItem>
                 <MenuItem Header="_View">
                     <MenuItem Header="_File List" IsCheckable="True" IsChecked="True"/>
