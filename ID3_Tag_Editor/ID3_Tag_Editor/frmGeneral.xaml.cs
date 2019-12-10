@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,6 +21,11 @@ namespace ID3_Tag_Editor
     /// </summary>
     public partial class frmGeneral : Window
     {
+        private static readonly Regex _regex = new Regex("[^0-9]+"); //regex that matches disallowed text
+        private static bool IsTextAllowed(string text)
+        {
+            return !_regex.IsMatch(text);
+        }
         TagLib.File file;
         public frmGeneral(string filepath)
         {
@@ -86,19 +92,39 @@ namespace ID3_Tag_Editor
 
         private void btSave_Click(object sender, RoutedEventArgs e)
         {
-            file.Tag.Title = tbTitle2.Text;
-            file.Tag.Performers[0] = tbArtist2.Text;
-            file.Tag.Album = tbAlbum2.Text;
+            if (tbTitle2.Text != "")
+                file.Tag.Title = tbTitle2.Text;
+
+            if (tbArtist2.Text != "")
+                file.Tag.Performers[0] = tbArtist2.Text;
+
+            if (tbAlbum2.Text != "")
+                file.Tag.Album = tbAlbum2.Text;
+
+            if (tbTrack2.Text != "")
+            {
+                try { file.Tag.Track = Convert.ToUInt32(tbTrack2.Text); }
+                catch (Exception) { throw; }
+            }
+
+            // set is nowhere to be found
 
             // Setting Performers to null because file.Tag.FirstPerformer is read-only
-            file.Tag.Performers = null; // clearing out performers
-            file.Tag.Performers = new[] { tbArtist2.Text }; 
+            if (tbArtist2.Text != "")
+            { 
+                file.Tag.Performers = null; 
+                file.Tag.Performers = new[] { tbArtist2.Text }; 
+            }
 
             // Same for Genres
-            file.Tag.Genres = null; // clearing out genres
-            file.Tag.Genres = new[] { cbGenre2.SelectedItem.ToString()};
+            if (cbGenre2.SelectedItem != null)
+            {
+                file.Tag.Genres = null;
+                file.Tag.Genres = new[] { cbGenre2.SelectedItem.ToString() };
+            }
 
             file.Save();
+            MessageBox.Show("File saved successfully.");
         }
 
         private void btOk_Click(object sender, RoutedEventArgs e)

@@ -28,11 +28,19 @@ namespace ID3_Tag_Editor
             // filling textboxes
             tbTitle.Text = file.Tag.Title;
             tbTitleSortOrder.Text = file.Tag.TitleSort;
+            // subtitle doesn't exist in taglib
             tbAlbum.Text = file.Tag.Album;
-            tbInterpret.Text = file.Tag.FirstPerformer;
             tbAlbumSortOrder.Text = file.Tag.AlbumSort;
+            tbInterpret.Text = file.Tag.FirstPerformer;
+            // language
+            // mood
+            // genre
             tbContentDescription.Text = file.Tag.Comment;
+            // initial key
             tbTrackNumber.Text = file.Tag.Track.ToString();
+            // playlist delay
+            // part of set
+            // set subtitle
             tbBPM.Text = file.Tag.BeatsPerMinute.ToString();
 
             // Combobox items
@@ -46,6 +54,44 @@ namespace ID3_Tag_Editor
             cbGenre.Items.Add("Jazz");
             cbGenre.Items.Add("Metal");
 
+        }
+
+        private void btOK_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btSave_Click(object sender, RoutedEventArgs e)
+        {
+            if (tbTitle.Text != "")
+                file.Tag.Title = tbTitle.Text;
+            if (tbTitleSortOrder.Text != "")
+                file.Tag.TitleSort = tbTitleSortOrder.Text;
+            // subtitle
+            if (tbAlbum.Text != "")
+                file.Tag.Album = tbAlbum.Text;
+            if (tbAlbumSortOrder.Text != "")
+                file.Tag.AlbumSort = tbAlbumSortOrder.Text;
+            if (tbInterpret.Text != "")
+            {
+                file.Tag.Performers = null;
+                file.Tag.Performers = new[] { tbInterpret.Text };
+            }
+            // language
+            // mood
+            // genre
+            if (tbContentDescription.Text != "")
+                file.Tag.Comment = tbContentDescription.Text;
+            // initial key
+            if (tbTrackNumber.Text != "")
+                file.Tag.Track = Convert.ToUInt32(tbTrackNumber.Text);
+            // playlist delay
+            // part of set
+            // set subtitle
+            if (tbBPM.Text != "")
+                file.Tag.BeatsPerMinute = Convert.ToUInt32(tbBPM.Text);
+            file.Save();
+            MessageBox.Show("File saved successfully.");
         }
     }
 }

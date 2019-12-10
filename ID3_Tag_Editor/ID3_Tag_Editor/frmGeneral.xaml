@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ID3_Tag_Editor"
         mc:Ignorable="d"
-        Title="General" Height="499" Width="729">
+        Title="General" Height="521.5" Width="720">
     <Grid Margin="0,0,0,2">
-        <GroupBox Header="ID3v1" HorizontalAlignment="Left" Height="409" VerticalAlignment="Top" Width="371">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="354*"/>
+            <ColumnDefinition Width="361*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="ID3v1" HorizontalAlignment="Left" Height="409" VerticalAlignment="Top" Width="371" Grid.ColumnSpan="2">
             <Grid HorizontalAlignment="Left" Height="389" Margin="10,10,-2,-12" VerticalAlignment="Top" Width="351">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
@@ -30,17 +34,17 @@
                 <Label Content="Genre:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="4"/>
                 <Label Content="Album:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="3"/>
                 <Label Content="Artist:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="2"/>
-                <TextBox x:Name="tbTrack" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243"/>
-                <TextBox x:Name="tbAlbum" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="10,9.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="3"/>
-                <TextBox x:Name="tbArtist" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="2"/>
-                <TextBox x:Name="tbTitle" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="1"/>
-                <TextBox x:Name="tbComment" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="6"/>
-                <TextBox x:Name="tbYear" Grid.Column="1" Height="22" Margin="10,10.5,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="5"/>
+                <TextBox x:Name="tbTrack" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" IsReadOnly="True"/>
+                <TextBox x:Name="tbAlbum" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="10,9.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="3" IsReadOnly="True"/>
+                <TextBox x:Name="tbArtist" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="2" IsReadOnly="True"/>
+                <TextBox x:Name="tbTitle" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="1" IsReadOnly="True"/>
+                <TextBox x:Name="tbComment" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Row="6" IsReadOnly="True"/>
+                <TextBox x:Name="tbYear" Grid.Column="1" Height="22" Margin="10,10.5,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="5" IsReadOnly="True"/>
                 <Button x:Name="btCopyFrom2" Content="Copy from Version 2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="7" VerticalAlignment="Top" Width="135" Grid.ColumnSpan="2" Click="btCopyFrom2_Click"/>
                 <ComboBox x:Name="cbGenre" HorizontalAlignment="Left" Margin="10,9,0,0" Grid.Row="4" VerticalAlignment="Top" Width="242" Height="30" Grid.Column="1"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="ID3v2" HorizontalAlignment="Left" Height="409" Margin="371,0,0,0" VerticalAlignment="Top" Width="334">
+        <GroupBox Header="ID3v2" HorizontalAlignment="Left" Height="409" Margin="17.25,0,0,0" VerticalAlignment="Top" Width="334" Grid.Column="1">
             <Grid HorizontalAlignment="Left" Height="389" VerticalAlignment="Top" Width="314" Margin="10,10,-2,-12">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
@@ -73,12 +77,12 @@
                 <TextBox x:Name="tbLanguage2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.5,9.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Row="5"/>
             </Grid>
         </GroupBox>
-        <Button x:Name="btOk" Content="_OK" HorizontalAlignment="Left" Margin="25,432,0,0" VerticalAlignment="Top" Width="75" Click="btOk_Click" />
-        <Button x:Name="btNext" Content="_Next &gt;&gt;" HorizontalAlignment="Left" Margin="265,432,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btPrevious" Content="&lt;&lt; _Previous" HorizontalAlignment="Left" Margin="185,432,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btSave" Content="_Save" HorizontalAlignment="Left" Margin="105,432,0,0" VerticalAlignment="Top" Width="75" Click="btSave_Click" />
-        <Label x:Name="lbPath" Content="" HorizontalAlignment="Left" Margin="425,429,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btTextInformation" Content="_Text Information" HorizontalAlignment="Left" Margin="345,432,0,0" VerticalAlignment="Top" Width="104" Click="btTextInformation_Click"/>
+        <Button x:Name="btOk" Content="_OK" HorizontalAlignment="Left" Margin="8,453,0,0" VerticalAlignment="Top" Width="75" Click="btOk_Click" />
+        <Button x:Name="btNext" Content="_Next &gt;&gt;" HorizontalAlignment="Left" Margin="248,453,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btPrevious" Content="&lt;&lt; _Previous" HorizontalAlignment="Left" Margin="168,453,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btSave" Content="_Save" HorizontalAlignment="Left" Margin="88,453,0,0" VerticalAlignment="Top" Width="75" Click="btSave_Click" />
+        <Label x:Name="lbPath" Content="" HorizontalAlignment="Left" Margin="10,414,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btTextInformation" Content="_Text Information" HorizontalAlignment="Left" Margin="328,453,0,0" VerticalAlignment="Top" Width="104" Click="btTextInformation_Click" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

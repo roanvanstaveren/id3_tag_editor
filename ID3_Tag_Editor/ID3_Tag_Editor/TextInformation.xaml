@@ -63,10 +63,10 @@
             </Grid>
         </GroupBox>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="24" Margin="10,459,0,-19" VerticalAlignment="Top" Width="101"/>
-        <Button x:Name="btOK" Content="_OK" HorizontalAlignment="Left" Height="24" Margin="10,459,0,-19" VerticalAlignment="Top" Width="101"/>
+        <Button x:Name="btOK" Content="_OK" HorizontalAlignment="Left" Height="24" Margin="10,459,0,-19" VerticalAlignment="Top" Width="101" Click="btOK_Click"/>
         <Button x:Name="btNext" Content="_Next &gt;&gt;" HorizontalAlignment="Left" Height="24" Margin="328,459,0,-19" VerticalAlignment="Top" Width="101"/>
         <Button x:Name="btPrevious" Content="&lt;&lt; Previous" HorizontalAlignment="Left" Height="24" Margin="222,459,0,-19" VerticalAlignment="Top" Width="101"/>
-        <Button x:Name="btSave" Content="Save" HorizontalAlignment="Left" Height="24" Margin="116,459,0,-19" VerticalAlignment="Top" Width="101"/>
+        <Button x:Name="btSave" Content="Save" HorizontalAlignment="Left" Height="24" Margin="116,459,0,-19" VerticalAlignment="Top" Width="101" Click="btSave_Click"/>
 
     </Grid>
 </Window>

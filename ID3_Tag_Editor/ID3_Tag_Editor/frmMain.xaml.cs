@@ -89,7 +89,9 @@ namespace ID3_Tag_Editor
         // Row Click 1
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            frmGeneral g = new frmGeneral(_Data.FilePath);
+            if (dataGrid.SelectedItem == null) return;
+            var selectedFile = dataGrid.SelectedItem as ID3Info;
+            frmGeneral g = new frmGeneral(selectedFile.FilePath);
             g.Show();
         }
 
@@ -147,6 +149,25 @@ namespace ID3_Tag_Editor
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btUp_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGrid.SelectedItem == null) return;
+
+            var sel = dataGrid.SelectedItem;
+            var col = collection;
+
+            for (int i = 0; i < collection.Count; i++)
+            {
+                if (collection[i].FilePath == sel.FilePath) ;
+            }
+
+        }
+
+        private void btDown_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
