@@ -28,6 +28,13 @@ namespace ID3_Tag_Editor
     {
         private ID3Info _Data;
         ObservableCollection<ID3Info> collection = new ObservableCollection<ID3Info>();
+        private int _selectedIndex;
+        public int SelectedIndex
+        {
+            get { return _selectedIndex; }
+            set { _selectedIndex = value; }
+        }
+
         public frmMain()
         {
             InitializeComponent();
@@ -156,13 +163,13 @@ namespace ID3_Tag_Editor
             if (dataGrid.SelectedItem == null) return;
 
             var selected = dataGrid.SelectedItem as ID3Info;
-            var newSelected = dataGrid.SelectedItem as ID3Info;
 
             for (int i = 0; i < collection.Count; i++)
             {
                 if (collection[i].FilePath == selected.FilePath)
                 {
-                    newSelected = collection[i--];
+                    //dataGrid.SelectedItem = collection[i--];
+                    _selectedIndex = i++;
                     break;
                 }
             }
@@ -178,9 +185,16 @@ namespace ID3_Tag_Editor
             {
                 if (collection[i].FilePath == selected.FilePath)
                 {
-                    dataGrid.SelectedItem = collection[i++];
+                    //dataGrid.SelectedItem = collection[i++];
+                    _selectedIndex = i++;
+                    break;
                 }
             }
+        }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            dataGrid.SelectedItem = collection[_selectedIndex];
         }
     }
 }

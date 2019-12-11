@@ -39,7 +39,7 @@
             </Menu>
         </DockPanel>
 
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="261" Margin="32,82,0,0" VerticalAlignment="Top" Width="679" MouseDoubleClick="Row_DoubleClick">
+        <DataGrid x:Name="dataGrid" SelectedIndex="{Binding SelectedIndex}" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="261" Margin="32,82,0,0" VerticalAlignment="Top" Width="679" MouseDoubleClick="Row_DoubleClick" SelectionChanged="dataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="File Name" IsReadOnly="True" Binding="{Binding Path=FileName}" Width="140"></DataGridTextColumn>
                 <DataGridTextColumn Header="File Size (kB)" IsReadOnly="True"  Binding="{Binding Path=FileSize}" Width="60"></DataGridTextColumn>
