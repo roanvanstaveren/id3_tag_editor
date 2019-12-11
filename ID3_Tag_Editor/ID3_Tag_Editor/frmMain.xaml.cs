@@ -155,19 +155,32 @@ namespace ID3_Tag_Editor
         {
             if (dataGrid.SelectedItem == null) return;
 
-            var sel = dataGrid.SelectedItem;
-            var col = collection;
+            var selected = dataGrid.SelectedItem as ID3Info;
+            var newSelected = dataGrid.SelectedItem as ID3Info;
 
             for (int i = 0; i < collection.Count; i++)
             {
-                if (collection[i].FilePath == sel.FilePath) ;
+                if (collection[i].FilePath == selected.FilePath)
+                {
+                    newSelected = collection[i--];
+                    break;
+                }
             }
-
         }
 
         private void btDown_Click(object sender, RoutedEventArgs e)
         {
+            if (dataGrid.SelectedItem == null) return;
 
+            var selected = dataGrid.SelectedItem as ID3Info;
+
+            for (int i = 0; i < collection.Count; i++)
+            {
+                if (collection[i].FilePath == selected.FilePath)
+                {
+                    dataGrid.SelectedItem = collection[i++];
+                }
+            }
         }
     }
 }
