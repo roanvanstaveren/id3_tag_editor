@@ -1,8 +1,3 @@
-C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3Class\bin\Debug\ID3.dll
-C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3Class\bin\Debug\ID3.pdb
-C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3Class\obj\Debug\ID3.csprojAssemblyReference.cache
-C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3Class\obj\Debug\ID3.dll
-C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3Class\obj\Debug\ID3.pdb
 C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3Class\bin\Debug\ID3.dll
 C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3Class\bin\Debug\ID3.pdb
 C:\Users\z003ub6r\Downloads\id3_tag_editor-master\ID3_Tag_Editor\ID3Class\obj\Debug\ID3.csprojAssemblyReference.cache
@@ -15,3 +10,7 @@ C:\UserData\z003ub6r\Documents\Visual Studio 2017\Solutions\Exercises\gibz\id3_t
 C:\UserData\z003ub6r\Documents\Visual Studio 2017\Solutions\Exercises\gibz\id3_tag_editor\ID3_Tag_Editor\ID3Class\obj\Debug\ID3.csproj.CoreCompileInputs.cache
 C:\UserData\z003ub6r\Documents\Visual Studio 2017\Solutions\Exercises\gibz\id3_tag_editor\ID3_Tag_Editor\ID3Class\obj\Debug\ID3.dll
 C:\UserData\z003ub6r\Documents\Visual Studio 2017\Solutions\Exercises\gibz\id3_tag_editor\ID3_Tag_Editor\ID3Class\obj\Debug\ID3.pdb
+C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3Class\bin\Debug\ID3.dll
+C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3Class\bin\Debug\ID3.pdb
+C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3Class\obj\Debug\ID3.dll
+C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3Class\obj\Debug\ID3.pdb
