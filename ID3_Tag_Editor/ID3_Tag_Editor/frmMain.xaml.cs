@@ -71,7 +71,7 @@ namespace ID3_Tag_Editor
             }
         }
 
-        // Load List 3
+        // Adding new file(s) to datagrid
         public void AddNewFile(string FilePath)
         {
             ID3Info ID3File;
@@ -99,9 +99,16 @@ namespace ID3_Tag_Editor
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (dataGrid.SelectedItem == null) return;
-            DataGridRow row = sender as DataGridRow;
-            int index = row.GetIndex();
+            int index = 0;
             var selectedFile = dataGrid.SelectedItem as ID3Info;
+            for (int i = 0; i < collection.Count; i++)
+            {
+                if (collection[i].FilePath == selectedFile.FilePath)
+                {
+                    index = i;
+                    break;
+                }
+            }
             frmGeneral g = new frmGeneral(selectedFile.FilePath, collection, index);
             g.Show();
         }
@@ -154,6 +161,7 @@ namespace ID3_Tag_Editor
                     A.Add(F.FullName);
                 }
                 M3U.Save(FileDialog.FileName, (string[])A.ToArray(typeof(string)));
+                MessageBox.Show("List saved successfully.");
             }
         }
 

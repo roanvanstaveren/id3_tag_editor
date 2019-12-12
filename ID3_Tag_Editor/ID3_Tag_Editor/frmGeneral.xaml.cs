@@ -151,7 +151,7 @@ namespace ID3_Tag_Editor
         private void btPrevious_Click(object sender, RoutedEventArgs e)
         {
             _index--;
-            if (0 <= _index)
+            if (0 > _index)
             {
                 MessageBox.Show("There is no further file to be edited.");
                 _index++;
@@ -163,7 +163,7 @@ namespace ID3_Tag_Editor
         private void btNext_Click(object sender, RoutedEventArgs e)
         {
             _index++;
-            if (_collection.Count < _index)
+            if (_collection.Count <= _index)
             {
                 MessageBox.Show("There is no further file to be edited.");
                 _index--;
