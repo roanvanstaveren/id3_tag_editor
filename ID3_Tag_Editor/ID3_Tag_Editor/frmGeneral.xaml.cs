@@ -1,6 +1,7 @@
 ﻿using ID3;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -22,33 +23,23 @@ namespace ID3_Tag_Editor
     public partial class frmGeneral : Window
     {
         private static readonly Regex _regex = new Regex("[^0-9]+"); //regex that matches disallowed text
+        private ObservableCollection<ID3Info> _collection = new ObservableCollection<ID3Info>();
+        private int _index;
         private static bool IsTextAllowed(string text)
         {
             return !_regex.IsMatch(text);
         }
         TagLib.File file;
-        public frmGeneral(string filepath)
+        public frmGeneral(string filepath, ObservableCollection<ID3Info> collection, int index)
         {
             InitializeComponent();
 
             file = TagLib.File.Create(filepath); // Get file from filepath
             lbPath.Content = file.Name;
+            _collection = collection;
+            _index = index;
 
-            // ID3v1
-            tbTrack.Text = file.Tag.Track.ToString();
-            tbTitle.Text = file.Tag.Title;
-            tbArtist.Text = file.Tag.FirstPerformer;
-            tbAlbum.Text = file.Tag.Album;
-            cbGenre.SelectedItem = file.Tag.FirstGenre;
-            tbYear.Text = file.Tag.Year.ToString();
-            tbComment.Text = file.Tag.Comment;
-
-            // ID3v2
-            tbTrack2.Text = file.Tag.Track.ToString();
-            tbTitle2.Text = file.Tag.Title;
-            tbArtist2.Text = file.Tag.FirstPerformer;
-            tbAlbum2.Text = file.Tag.Album;
-            cbGenre2.SelectedItem = file.Tag.FirstGenre;
+            SetValues();
 
             // Combobox items
             cbGenre.Items.Add("Blues");
@@ -111,9 +102,9 @@ namespace ID3_Tag_Editor
 
             // Setting Performers to null because file.Tag.FirstPerformer is read-only
             if (tbArtist2.Text != "")
-            { 
-                file.Tag.Performers = null; 
-                file.Tag.Performers = new[] { tbArtist2.Text }; 
+            {
+                file.Tag.Performers = null;
+                file.Tag.Performers = new[] { tbArtist2.Text };
             }
 
             // Same for Genres
@@ -136,6 +127,49 @@ namespace ID3_Tag_Editor
         {
             TextInformation tf = new TextInformation(file.Name);
             tf.Show();
+        }
+
+        public void SetValues()
+        {
+            // ID3v1
+            tbTrack.Text = file.Tag.Track.ToString();
+            tbTitle.Text = file.Tag.Title;
+            tbArtist.Text = file.Tag.FirstPerformer;
+            tbAlbum.Text = file.Tag.Album;
+            cbGenre.SelectedItem = file.Tag.FirstGenre;
+            tbYear.Text = file.Tag.Year.ToString();
+            tbComment.Text = file.Tag.Comment;
+
+            // ID3v2
+            tbTrack2.Text = file.Tag.Track.ToString();
+            tbTitle2.Text = file.Tag.Title;
+            tbArtist2.Text = file.Tag.FirstPerformer;
+            tbAlbum2.Text = file.Tag.Album;
+            cbGenre2.SelectedItem = file.Tag.FirstGenre;
+        }
+
+        private void btPrevious_Click(object sender, RoutedEventArgs e)
+        {
+            _index--;
+            if (0 <= _index)
+            {
+                MessageBox.Show("There is no further file to be edited.");
+                _index++;
+            }
+            file = TagLib.File.Create(_collection[_index].FilePath);
+            SetValues();
+        }
+
+        private void btNext_Click(object sender, RoutedEventArgs e)
+        {
+            _index++;
+            if (_collection.Count < _index)
+            {
+                MessageBox.Show("There is no further file to be edited.");
+                _index--;
+            }
+            file = TagLib.File.Create(_collection[_index].FilePath);
+            SetValues();
         }
     }
 }

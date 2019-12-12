@@ -78,8 +78,8 @@
             </Grid>
         </GroupBox>
         <Button x:Name="btOk" Content="_OK" HorizontalAlignment="Left" Margin="8,453,0,0" VerticalAlignment="Top" Width="75" Click="btOk_Click" />
-        <Button x:Name="btNext" Content="_Next &gt;&gt;" HorizontalAlignment="Left" Margin="248,453,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btPrevious" Content="&lt;&lt; _Previous" HorizontalAlignment="Left" Margin="168,453,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btNext" Content="_Next &gt;&gt;" HorizontalAlignment="Left" Margin="248,453,0,0" VerticalAlignment="Top" Width="75" Click="btNext_Click"/>
+        <Button x:Name="btPrevious" Content="&lt;&lt; _Previous" HorizontalAlignment="Left" Margin="168,453,0,0" VerticalAlignment="Top" Width="75" Click="btPrevious_Click"/>
         <Button x:Name="btSave" Content="_Save" HorizontalAlignment="Left" Margin="88,453,0,0" VerticalAlignment="Top" Width="75" Click="btSave_Click" />
         <Label x:Name="lbPath" Content="" HorizontalAlignment="Left" Margin="10,414,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btTextInformation" Content="_Text Information" HorizontalAlignment="Left" Margin="328,453,0,0" VerticalAlignment="Top" Width="104" Click="btTextInformation_Click" Grid.ColumnSpan="2"/>

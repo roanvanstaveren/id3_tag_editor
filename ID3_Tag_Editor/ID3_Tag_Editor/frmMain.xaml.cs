@@ -78,9 +78,11 @@ namespace ID3_Tag_Editor
 
             try
             {
+                var file = TagLib.File.Create(FilePath);
                 var fileInfo = new FileInfo(FilePath);
                 ID3File = new ID3Info(FilePath, true);
                 ID3File.FileSize = fileInfo.Length / 1000;
+                //ID3File.ID3Size = file.
                 collection.Add(ID3File); // Filepath is set correctly, Columns are being added at the end
                 _Data = ID3File;
                 dataGrid.ItemsSource = collection;
@@ -97,8 +99,10 @@ namespace ID3_Tag_Editor
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (dataGrid.SelectedItem == null) return;
+            DataGridRow row = sender as DataGridRow;
+            int index = row.GetIndex();
             var selectedFile = dataGrid.SelectedItem as ID3Info;
-            frmGeneral g = new frmGeneral(selectedFile.FilePath);
+            frmGeneral g = new frmGeneral(selectedFile.FilePath, collection, index);
             g.Show();
         }
 
@@ -168,8 +172,7 @@ namespace ID3_Tag_Editor
             {
                 if (collection[i].FilePath == selected.FilePath)
                 {
-                    //dataGrid.SelectedItem = collection[i--];
-                    _selectedIndex = i++;
+                    dataGrid.SelectedItem = collection[i--];
                     break;
                 }
             }
@@ -185,9 +188,8 @@ namespace ID3_Tag_Editor
             {
                 if (collection[i].FilePath == selected.FilePath)
                 {
-                    //dataGrid.SelectedItem = collection[i++];
-                    _selectedIndex = i++;
-                    break;
+                    dataGrid.SelectedItem = collection[i++];
+                    DataContext = collection;
                 }
             }
         }

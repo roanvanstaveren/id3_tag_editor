@@ -34,7 +34,7 @@ namespace ID3_Tag_Editor
             tbInterpret.Text = file.Tag.FirstPerformer;
             // language
             // mood
-            // genre
+            cbGenre.SelectedItem = file.Tag.FirstGenre;
             tbContentDescription.Text = file.Tag.Comment;
             // initial key
             tbTrackNumber.Text = file.Tag.Track.ToString();
