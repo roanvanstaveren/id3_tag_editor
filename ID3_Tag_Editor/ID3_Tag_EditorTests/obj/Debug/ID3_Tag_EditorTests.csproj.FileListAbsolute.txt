@@ -17,3 +17,5 @@ C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor
 C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_EditorTests\obj\Debug\ID3_Tag_EditorTests.csproj.CopyComplete
 C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_EditorTests\obj\Debug\ID3_Tag_EditorTests.dll
 C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_EditorTests\obj\Debug\ID3_Tag_EditorTests.pdb
+C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_EditorTests\bin\Debug\test.mp3
+C:\Users\roan1\Documents\Gibz\Year 3 Season 1\M326\id3_tag_editor\ID3_Tag_Editor\ID3_Tag_EditorTests\bin\Debug\test2.mp3

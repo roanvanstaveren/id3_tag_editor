@@ -74,6 +74,7 @@ namespace ID3_Tag_Editor
 
             try
             {
+                // add file after file to datagrid
                 foreach (string path in FilePaths)
                 {
                     var file = TagLib.File.Create(FilePaths[i]);
@@ -81,7 +82,7 @@ namespace ID3_Tag_Editor
                     ID3File = new ID3Info(FilePaths[i], true);
                     ID3File.FileSize = fileInfo.Length / 1000;
                     ID3File.ID3Size = file.InvariantStartPosition / 1000;
-                    collection.Add(ID3File); // Filepath is set correctly, Columns are being added at the end
+                    collection.Add(ID3File); 
                     _Data = ID3File;
                     dataGrid.ItemsSource = collection;
                     i++;
@@ -106,7 +107,7 @@ namespace ID3_Tag_Editor
                 ID3File = new ID3Info(filePath, true);
                 ID3File.FileSize = fileInfo.Length;
                 ID3File.ID3Size = file.InvariantStartPosition / 1000;
-                collection.Add(ID3File); // Filepath is set correctly, Columns are being added at the end
+                collection.Add(ID3File); 
                 _Data = ID3File;
                 dataGrid.ItemsSource = collection;
             }

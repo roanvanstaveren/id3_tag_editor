@@ -15,10 +15,11 @@ namespace ID3_Tag_Editor.Tests
         [TestMethod()]
         public void LoadM3uTest()
         {
+            var path = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
             try
             {
-                string[] strArr = { "C:\\Users\\roan1\\Music\\trap\\Alan Walker - Sing Me To Sleep (marshmello Remix).mp3",
-                "C:\\Users\\roan1\\Music\\trap\\Black Coast - TRNDSTTR (Lucian Remix).mp3"};
+                string[] strArr = {  path + "\\test.mp3",
+                path + "\\test2.mp3" };
                 form.LoadM3u(strArr);
             }
             catch (Exception)
@@ -30,10 +31,11 @@ namespace ID3_Tag_Editor.Tests
         [TestMethod()]
         public void AddNewFilesTest()
         {
+            var path = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
             try
             {
-                string[] strArr = { "C:\\Users\\roan1\\Music\\trap\\Alan Walker - Sing Me To Sleep (marshmello Remix).mp3",
-                "C:\\Users\\roan1\\Music\\trap\\Black Coast - TRNDSTTR (Lucian Remix).mp3"};
+                string[] strArr = { path + "\\test.mp3",
+                path + "\\test2.mp3" };
                 form.AddNewFiles(strArr);
             }
             catch (Exception)
@@ -45,9 +47,10 @@ namespace ID3_Tag_Editor.Tests
         [TestMethod()]
         public void AddNewFileTest()
         {
+            var path = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
             try
             {
-                form.AddNewFile("C:\\Users\\roan1\\Music\\trap\\Alan Walker - Sing Me To Sleep (marshmello Remix).mp3");
+                form.AddNewFile(path + "\\test.mp3");
             }
             catch (Exception)
             {
@@ -58,9 +61,10 @@ namespace ID3_Tag_Editor.Tests
         [TestMethod()]
         public void LoadMP3Test()
         {
+            var path = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
             try
             {
-                form.LoadMP3("C:\\Users\\roan1\\Music\\trap\\Alan Walker - Sing Me To Sleep (marshmello Remix).mp3");
+                form.LoadMP3(path + "\\test.mp3");
             }
             catch (Exception)
             {
@@ -71,10 +75,12 @@ namespace ID3_Tag_Editor.Tests
         [TestMethod()]
         public void LoadMultipleMP3Test()
         {
+            var path = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
+
             try
             {
-                string[] strArr = { "C:\\Users\\roan1\\Music\\trap\\Alan Walker - Sing Me To Sleep (marshmello Remix).mp3",
-                "C:\\Users\\roan1\\Music\\trap\\Black Coast - TRNDSTTR (Lucian Remix).mp3"};
+                string[] strArr = { path + "\\test.mp3",
+                path + "\\test2.mp3" };
                 form.LoadMultipleMP3(strArr);
             }
             catch (Exception)
