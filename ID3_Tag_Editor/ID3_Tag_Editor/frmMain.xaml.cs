@@ -61,7 +61,6 @@ namespace ID3_Tag_Editor
             if (Path.GetExtension(FilePaths[0]).ToLower() != ".m3u")
                 return;
 
-            //ClearList();
             string[] L = M3U.Load(FilePaths[0]);
             AddNewFiles(L);
         }
@@ -81,6 +80,7 @@ namespace ID3_Tag_Editor
                     var fileInfo = new FileInfo(FilePaths[i]);
                     ID3File = new ID3Info(FilePaths[i], true);
                     ID3File.FileSize = fileInfo.Length / 1000;
+                    ID3File.ID3Size = file.InvariantStartPosition / 1000;
                     collection.Add(ID3File); // Filepath is set correctly, Columns are being added at the end
                     _Data = ID3File;
                     dataGrid.ItemsSource = collection;
@@ -104,8 +104,8 @@ namespace ID3_Tag_Editor
                 var file = TagLib.File.Create(filePath);
                 var fileInfo = new FileInfo(filePath);
                 ID3File = new ID3Info(filePath, true);
-                ID3File.FileSize = fileInfo.Length / 1000;
-                ////ID3File.ID3Size = file.
+                ID3File.FileSize = fileInfo.Length;
+                ID3File.ID3Size = file.InvariantStartPosition / 1000;
                 collection.Add(ID3File); // Filepath is set correctly, Columns are being added at the end
                 _Data = ID3File;
                 dataGrid.ItemsSource = collection;

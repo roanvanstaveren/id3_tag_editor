@@ -43,7 +43,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="File Name" IsReadOnly="True" Binding="{Binding Path=FileName}" Width="140"></DataGridTextColumn>
                 <DataGridTextColumn Header="File Size (kB)" IsReadOnly="True"  Binding="{Binding Path=FileSize}" Width="80"></DataGridTextColumn>
-                <DataGridTextColumn Header="ID3 Size" IsReadOnly="True" Binding="{Binding Path=ID3Size}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID3 Size (B)" IsReadOnly="True" Binding="{Binding Path=ID3Size}" Width="80"></DataGridTextColumn>
                 <DataGridTextColumn Header="Path" IsReadOnly="True"  Binding="{Binding Path=FilePath}" Width="500"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
