@@ -25,6 +25,7 @@ namespace ID3_Tag_Editor
         private static readonly Regex _regex = new Regex("[^0-9]+"); //regex that matches disallowed text
         private ObservableCollection<ID3Info> _collection = new ObservableCollection<ID3Info>();
         private int _index;
+        string _filepath;
         private static bool IsTextAllowed(string text)
         {
             return !_regex.IsMatch(text);
@@ -38,6 +39,7 @@ namespace ID3_Tag_Editor
             lbPath.Content = file.Name;
             _collection = collection;
             _index = index;
+            _filepath = filepath;
 
             SetValues();
 
@@ -65,20 +67,12 @@ namespace ID3_Tag_Editor
 
         private void btCopyFrom2_Click(object sender, RoutedEventArgs e)
         {
-            tbTrack.Text = tbTrack2.Text;
-            tbTitle.Text = tbTitle2.Text;
-            tbArtist.Text = tbArtist2.Text;
-            tbAlbum.Text = tbAlbum2.Text;
-            cbGenre.Text = cbGenre2.Text;
+            CopyFrom2();
         }
 
         private void btCopyFrom1_Click(object sender, RoutedEventArgs e)
         {
-            tbTrack2.Text = tbTrack.Text;
-            tbTitle2.Text = tbTitle.Text;
-            tbArtist2.Text = tbArtist.Text;
-            tbAlbum2.Text = tbAlbum.Text;
-            cbGenre2.Text = cbGenre.Text;
+            CopyFrom1();
         }
 
         private void btSave_Click(object sender, RoutedEventArgs e)
@@ -125,7 +119,7 @@ namespace ID3_Tag_Editor
 
         private void btTextInformation_Click(object sender, RoutedEventArgs e)
         {
-            TextInformation tf = new TextInformation(file.Name);
+            TextInformation tf = new TextInformation(_filepath, _collection, _index);
             tf.Show();
         }
 
@@ -170,6 +164,24 @@ namespace ID3_Tag_Editor
             }
             file = TagLib.File.Create(_collection[_index].FilePath);
             SetValues();
+        }
+
+        public void CopyFrom1()
+        {
+            tbTrack2.Text = tbTrack.Text;
+            tbTitle2.Text = tbTitle.Text;
+            tbArtist2.Text = tbArtist.Text;
+            tbAlbum2.Text = tbAlbum.Text;
+            cbGenre2.Text = cbGenre.Text;
+        }
+
+        public void CopyFrom2()
+        {
+            tbTrack.Text = tbTrack2.Text;
+            tbTitle.Text = tbTitle2.Text;
+            tbArtist.Text = tbArtist2.Text;
+            tbAlbum.Text = tbAlbum2.Text;
+            cbGenre.Text = cbGenre2.Text;
         }
     }
 }

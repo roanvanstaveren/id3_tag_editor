@@ -105,6 +105,7 @@ namespace ID3
         // Get FileSize of current ID3Info file
         // </summary>
         public long FileSize { get; set; }
+        public long ID3Size { get; set; }
 
         public override bool Equals(object obj)
         {

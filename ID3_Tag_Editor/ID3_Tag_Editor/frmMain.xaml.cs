@@ -81,11 +81,9 @@ namespace ID3_Tag_Editor
                     var fileInfo = new FileInfo(FilePaths[i]);
                     ID3File = new ID3Info(FilePaths[i], true);
                     ID3File.FileSize = fileInfo.Length / 1000;
-                    ////ID3File.ID3Size = file.
-                    //collection.Add(ID3File); // Filepath is set correctly, Columns are being added at the end
-                    //_Data = ID3File;
-                    //dataGrid.ItemsSource = collection;
-                    // FileInfo(path).Length
+                    collection.Add(ID3File); // Filepath is set correctly, Columns are being added at the end
+                    _Data = ID3File;
+                    dataGrid.ItemsSource = collection;
                     i++;
                 }
             }
@@ -149,6 +147,7 @@ namespace ID3_Tag_Editor
                 if (List.FileNames.Length > 1)
                 {
                     LoadMultipleMP3(List.FileNames);
+                    return;
                 }
                 LoadMP3(List.FileName);
             }
@@ -172,14 +171,12 @@ namespace ID3_Tag_Editor
 
         public void LoadMultipleMP3(string[] filePaths)
         {
-            var file = TagLib.File.Create(path); // Get file from filepath
-
             foreach (string item in filePaths)
             {
-                if (Path.GetExtension(item.Name).ToLower() != ".mp3")
+                if (Path.GetExtension(item).ToLower() != ".mp3")
                 {
                     MessageBox.Show("File is not MP3.");
-                    return; 
+                    return;
                 }
             }
             AddNewFiles(filePaths);
@@ -250,6 +247,16 @@ namespace ID3_Tag_Editor
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             dataGrid.SelectedItem = collection[_selectedIndex];
+        }
+
+        private void btDelete_Click(object sender, RoutedEventArgs e)
+        {
+            ID3Info selectedItem = dataGrid.SelectedItem as ID3Info;
+            if (selectedItem != null)
+            {
+                collection.Remove(selectedItem);
+                dataGrid.ItemsSource = collection;
+            }
         }
     }
 }

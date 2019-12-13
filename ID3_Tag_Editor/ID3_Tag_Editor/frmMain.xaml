@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ID3_Tag_Editor"
         mc:Ignorable="d"
-        Title="Main" Height="450" Width="823.258">
+        Title="Main" Height="418.5" Width="707.758">
     <Grid>
         <DockPanel>
             <Menu DockPanel.Dock="Top">
@@ -38,16 +38,14 @@
                 </MenuItem>
             </Menu>
         </DockPanel>
-
-        <DataGrid x:Name="dataGrid" SelectedIndex="{Binding SelectedIndex}" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="261" Margin="32,82,0,0" VerticalAlignment="Top" Width="679" MouseDoubleClick="Row_DoubleClick" SelectionChanged="dataGrid_SelectionChanged">
+        <Button x:Name="btDelete" Content="Delete Row" Height="34" Width="92" Margin="598,354,13,3" Click="btDelete_Click"/>
+        <DataGrid x:Name="dataGrid" SelectedIndex="{Binding SelectedIndex}" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="261" Margin="10,88,0,0" VerticalAlignment="Top" Width="680" MouseDoubleClick="Row_DoubleClick" SelectionChanged="dataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="File Name" IsReadOnly="True" Binding="{Binding Path=FileName}" Width="140"></DataGridTextColumn>
-                <DataGridTextColumn Header="File Size (kB)" IsReadOnly="True"  Binding="{Binding Path=FileSize}" Width="60"></DataGridTextColumn>
+                <DataGridTextColumn Header="File Size (kB)" IsReadOnly="True"  Binding="{Binding Path=FileSize}" Width="80"></DataGridTextColumn>
                 <DataGridTextColumn Header="ID3 Size" IsReadOnly="True" Binding="{Binding Path=ID3Size}" Width="80"></DataGridTextColumn>
                 <DataGridTextColumn Header="Path" IsReadOnly="True"  Binding="{Binding Path=FilePath}" Width="500"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btUp" Content="🡅" HorizontalAlignment="Left" Margin="727,82,0,0" VerticalAlignment="Top" Width="47" RenderTransformOrigin="0.546,1.833" Height="31" Click="btUp_Click"/>
-        <Button x:Name="btDown" Content="🡇" HorizontalAlignment="Left" Margin="727,118,0,0" VerticalAlignment="Top" Width="47" Height="31" Click="btDown_Click"/>
     </Grid>
 </Window>

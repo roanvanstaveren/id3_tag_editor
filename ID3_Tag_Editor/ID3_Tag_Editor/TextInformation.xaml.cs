@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ID3;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,28 +22,18 @@ namespace ID3_Tag_Editor
     public partial class TextInformation : Window
     {
         TagLib.File file;
-        public TextInformation(string filepath)
+        private ObservableCollection<ID3Info> _collection = new ObservableCollection<ID3Info>();
+        private int _index;
+        string _filepath;
+        public TextInformation(string filepath, ObservableCollection<ID3Info> collection, int index)
         {
             InitializeComponent();
             file = TagLib.File.Create(filepath); // Get file from filepath
+            _filepath = filepath;
+            _collection = collection;
+            _index = index;
 
-            // filling textboxes
-            tbTitle.Text = file.Tag.Title;
-            tbTitleSortOrder.Text = file.Tag.TitleSort;
-            // subtitle doesn't exist in taglib
-            tbAlbum.Text = file.Tag.Album;
-            tbAlbumSortOrder.Text = file.Tag.AlbumSort;
-            tbInterpret.Text = file.Tag.FirstPerformer;
-            // language
-            // mood
-            cbGenre.SelectedItem = file.Tag.FirstGenre;
-            tbContentDescription.Text = file.Tag.Comment;
-            // initial key
-            tbTrackNumber.Text = file.Tag.Track.ToString();
-            // playlist delay
-            // part of set
-            // set subtitle
-            tbBPM.Text = file.Tag.BeatsPerMinute.ToString();
+            SetValues();
 
             // Combobox items
             cbGenre.Items.Add("Blues");
@@ -92,6 +84,52 @@ namespace ID3_Tag_Editor
                 file.Tag.BeatsPerMinute = Convert.ToUInt32(tbBPM.Text);
             file.Save();
             MessageBox.Show("File saved successfully.");
+        }
+
+        private void btPrevious_Click(object sender, RoutedEventArgs e)
+        {
+
+            _index--;
+            if (0 > _index)
+            {
+                MessageBox.Show("There is no further file to be edited.");
+                _index++;
+            }
+            file = TagLib.File.Create(_collection[_index].FilePath);
+            SetValues();
+        }
+
+        private void btNext_Click(object sender, RoutedEventArgs e)
+        {
+            _index++;
+            if (_collection.Count <= _index)
+            {
+                MessageBox.Show("There is no further file to be edited.");
+                _index--;
+            }
+            file = TagLib.File.Create(_collection[_index].FilePath);
+            SetValues();
+        }
+
+        public void SetValues()
+        {
+            // filling textboxes
+            tbTitle.Text = file.Tag.Title;
+            tbTitleSortOrder.Text = file.Tag.TitleSort;
+            // subtitle doesn't exist in taglib
+            tbAlbum.Text = file.Tag.Album;
+            tbAlbumSortOrder.Text = file.Tag.AlbumSort;
+            tbInterpret.Text = file.Tag.FirstPerformer;
+            // language
+            // mood
+            cbGenre.SelectedItem = file.Tag.FirstGenre;
+            tbContentDescription.Text = file.Tag.Comment;
+            // initial key
+            tbTrackNumber.Text = file.Tag.Track.ToString();
+            // playlist delay
+            // part of set
+            // set subtitle
+            tbBPM.Text = file.Tag.BeatsPerMinute.ToString();
         }
     }
 }
