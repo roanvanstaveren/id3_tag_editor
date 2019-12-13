@@ -76,6 +76,7 @@
     <Content Include="Text Files\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ID3.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ID3.ID3Info">
+    <Position X="0.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIgAAAAAAABAgAAAQAAAAAAAAKAABABAQABAAAA=</HashCode>
+      <FileName>ID3Info.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ID3.ID3v2">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GCACj4zDICFARcB8BCABIuHAs7NQAIwLggJYiIF2PCA=</HashCode>
+      <FileName>ID3v2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ID3.ID3v1Frame.ID3v1">
+    <Position X="4" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACgYAEBAAAAEAAIAIAgAAAAoAAAQAAAABQiBJAIAA=</HashCode>
+      <FileName>ID3v1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
