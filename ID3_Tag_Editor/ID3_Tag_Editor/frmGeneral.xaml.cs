@@ -80,26 +80,24 @@ namespace ID3_Tag_Editor
             if (tbTitle2.Text != "")
                 file.Tag.Title = tbTitle2.Text;
 
-            if (tbArtist2.Text != "")
-                file.Tag.Performers[0] = tbArtist2.Text;
+           //  file.Tag.Performers[0] = tbArtist2.Text;
+            
+            // file.Tag.Album = tbAlbum2.Text;
 
-            if (tbAlbum2.Text != "")
-                file.Tag.Album = tbAlbum2.Text;
-
-            if (tbTrack2.Text != "")
-            {
-                try { file.Tag.Track = Convert.ToUInt32(tbTrack2.Text); }
-                catch (Exception) { throw; }
-            }
+            //if (tbTrack2.Text != "")
+            //{
+            //    try { file.Tag.Track = Convert.ToUInt32(tbTrack2.Text); }
+            //    catch (Exception) { throw; }
+            //}
 
             // set is nowhere to be found
 
             // Setting Performers to null because file.Tag.FirstPerformer is read-only
-            if (tbArtist2.Text != "")
-            {
-                file.Tag.Performers = null;
-                file.Tag.Performers = new[] { tbArtist2.Text };
-            }
+            //if (tbArtist2.Text != "")
+            //{
+            //    file.Tag.Performers = null;
+            //    file.Tag.Performers = new[] { tbArtist2.Text };
+            //}
 
             // Same for Genres
             if (cbGenre2.SelectedItem != null)
